@@ -8,6 +8,8 @@
 
 `porest.cloud` 루트의 그룹 홈페이지. `index.html` 한 파일이 전부이고 빌드가 없다.
 디자인은 `porest-design` 을 따르지 않는다 — 제품 화면이 아니라 그룹 소개 페이지라 일부러 다른 인상을 낸다.
+바닥(`<footer>`)만 예외다 — 짜임 · 간격 · 글 크기는 `porest-design` 의 Footer 스펙(`specs/components/footer.md`)을 따르고,
+색 · 글꼴만 홈 것이다(2026-10-15 사용자 결정). 바닥을 고칠 때는 그 스펙부터 본다.
 
 ## 지킬 것
 
