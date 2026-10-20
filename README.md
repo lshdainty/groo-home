@@ -17,7 +17,7 @@
 페이지를 고쳐 PR → 머지 → 태그 → Jenkins `porest-home` 잡에서 prod 배포(잡 이름은 서버 쪽이라 아직 옛 이름이다). 그게 전부다.
 서비스 링크(`hr.` `desk.` `sso.porest.cloud`)와 설명 문구만 페이지 안에서 바꾼다.
 
-디자인 값이 바뀌면 `scripts/sync_design.sh`(옆 폴더 `../porest-design`, 다르면 `PORESTDESIGN_DIR`)로 토큰을 다시 가져온다.
+디자인 값이 바뀌면 `scripts/sync_design.sh`(옆 폴더 `../groo-design`, 다르면 `GROODESIGN_DIR`)로 토큰을 다시 가져온다.
 로컬 미리보기는 이 폴더 루트에서 `python3 -m http.server` — 주소가 `/css/…` 처럼 루트 기준이다.
 
 ## 엣지 nginx (서버 `nginx/prod/nginx.conf` · `nginx/dev/nginx.conf`)

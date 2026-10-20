@@ -1,7 +1,7 @@
 /*
  * 그루 홈 — 사이트 스타일.
  * 값은 전부 디자인 시스템 토큰(css/tokens*.css, scripts/sync_design.sh 가 생성)을 var() 로 부른다.
- * 새 색 · 크기를 여기서 정하지 않는다. 필요하면 porest-design 에서 정한 뒤 가져온다.
+ * 새 색 · 크기를 여기서 정하지 않는다. 필요하면 groo-design 에서 정한 뒤 가져온다.
  * 서비스 쪽 색(이음 = .theme-hr, 담다 = .theme-desk)은 body 나 섹션에 클래스만 얹는다.
  */
 :root {
@@ -132,7 +132,7 @@ section:not(.alt) .trio > div { background: var(--color-bg-neutral-weak); }
 .center-head { text-align: center; margin-left: auto; margin-right: auto; }
 .center-head .sub { margin-left: auto; margin-right: auto; }
 
-/* 바닥 — porest-design Footer 스펙(specs/components/footer.md) 짜임 */
+/* 바닥 — groo-design Footer 스펙(specs/components/footer.md) 짜임 */
 footer { border-top: 1px solid var(--color-stroke-neutral-weak); }
 footer .ft { max-width: 1040px; margin: 0 auto; padding: var(--spacing-x10) var(--spacing-x8); display: flex; flex-direction: column; gap: var(--spacing-x10); }
 footer .ft-nav { display: flex; flex-wrap: wrap; gap: var(--spacing-x8); align-items: flex-start; }
