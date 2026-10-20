@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="그루(GROO) — 일상에 한 그루, 함께 만드는 숲. 사람과 회사를 잇는 그루 이음(HR), 일상을 정갈하게 담는 그루 담다(Desk), 하나의 그루 계정.">
 <title>그루 · GROO</title>
+<link rel="icon" type="image/svg+xml" href="img/groo-icon.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
 <style>
 :root{--bg:#FFFFFF;--bg2:#F9FAFB;--bg3:#F2F4F6;--ink:#191F28;--ink2:#4E5968;--ink3:#6B7684;--line:#E5E8EB;--blue:#1B64DA;--blue2:#E8F0FE;--dark:#17171C;--dark-ink:#F2F4F6;--dark-ink2:#B0B8C1}
@@ -19,7 +20,8 @@ img{max-width:100%;height:auto;display:block}
 nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
 nav.scrolled{border-color:var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-weight:900;font-size:20px;letter-spacing:.02em;color:var(--blue)}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:.02em;color:var(--blue)}
+.logo img{height:30px;width:auto;display:block}
 nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500;color:var(--ink2)}
 nav ul a:hover{color:var(--ink)}
 .nav-cta{font-size:14px;font-weight:700;padding:9px 16px;border-radius:8px;background:var(--blue);color:#fff}
@@ -47,6 +49,7 @@ h2{font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.3;letter-spacing
 .phone.sm{width:240px;border-radius:34px;padding:9px}.phone.sm img{border-radius:26px}
 /* hero */
 .hero{padding:120px 0 0;text-align:center;background:linear-gradient(180deg,#fff 0%,#F5F8FF 100%);overflow:hidden}
+.hero-mark{height:92px;width:auto;margin:0 auto 28px}
 .hero .sub{margin-left:auto;margin-right:auto;max-width:40ch}
 .hero .btns{justify-content:center}
 .hero-visual{position:relative;max-width:1060px;margin:70px auto 0;padding:0 24px}
@@ -81,9 +84,16 @@ h2{font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.3;letter-spacing
 .band::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(17,20,24,.94) 0%,rgba(17,20,24,.86) 40%,rgba(17,20,24,.45) 75%,rgba(17,20,24,.25) 100%)}
 .band h2,.band .sub{text-shadow:0 2px 12px rgba(0,0,0,.35)}
 .band .wrap{position:relative;z-index:2;width:100%;padding-top:96px;padding-bottom:96px}
+.band.solid{background:var(--dark)}.band.solid::before{display:none}
 .band h2{max-width:22ch;color:#fff}
 .band .sub{color:rgba(255,255,255,.82)}
 .band .eyebrow{color:#7FA8FF}
+/* about — brand */
+.about{padding:150px 0;background:var(--bg2)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about .mark{display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:32px;padding:64px 40px}
+.about .mark img{width:min(280px,72%);height:auto}
+.about .sub{max-width:46ch}
 /* HR grid */
 .hrgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
 .hrgrid .c{background:var(--bg2);border-radius:16px;padding:26px 24px;text-align:left}
@@ -137,6 +147,7 @@ footer .ft-copy{margin:0;font-size:14px;line-height:19px;font-weight:500;color:v
   .feat{padding:96px 0}.feat .wrap{grid-template-columns:1fr;gap:44px}.feat.flip .copy{order:0}.feat .sub{max-width:none}.feat .visual .phone{display:none}
   .wide,.phones,.values,.center,.end{padding:96px 0}
   .phones .row{gap:14px}.phones .row .phone:nth-child(1),.phones .row .phone:nth-child(3){width:200px}.phones .row .phone:nth-child(2){width:240px}
+  .about{padding:96px 0}.about .wrap{grid-template-columns:1fr;gap:44px}
   .hrgrid{grid-template-columns:1fr 1fr}.values .grid{grid-template-columns:1fr}.band{min-height:auto}
 }
 @media (max-width:560px){.phones .row .phone:nth-child(1),.phones .row .phone:nth-child(3){display:none}.hrgrid{grid-template-columns:1fr}}
@@ -145,15 +156,16 @@ footer .ft-copy{margin:0;font-size:14px;line-height:19px;font-weight:500;color:v
 <body>
 
 <nav id="nav"><div class="wrap">
-  <a class="logo" href="#top">GROO</a>
+  <a class="logo" href="#top"><img src="img/groo-logo.svg" alt="" width="28" height="30"><span>GROO</span></a>
   <ul><li><a href="#hr">이음</a></li><li><a href="#desk">담다</a></li><li><a href="#app">앱</a></li><li><a href="#about">그루</a></li><li><a href="https://desk.porest.cloud/guide/">가이드</a></li></ul>
   <a class="nav-cta" href="https://sso.porest.cloud">로그인</a>
 </div></nav>
 
 <header class="hero" id="top">
   <div class="wrap">
+    <img class="hero-mark rv" src="img/groo-logo.svg" alt="그루 심볼" width="86" height="92">
     <h1 class="rv">일상에 한 그루,<br>함께 만드는 숲</h1>
-    <p class="sub rv">회사의 근무와 휴가부터 나의 가계부와 할 일까지.<br>하나의 계정으로 오늘 하루를 정리하세요.</p>
+    <p class="sub rv">사람과 회사를 잇는 이음, 흩어진 일상을 담는 담다.<br>하나의 그루 계정으로 시작하세요.</p>
     <div class="btns rv"><a class="btn btn-blue" href="https://desk.porest.cloud">그루 담다 시작하기</a><a class="btn btn-grey" href="https://hr.porest.cloud">그루 이음 들어가기</a></div>
   </div>
   <div class="hero-visual rv">
@@ -166,9 +178,9 @@ footer .ft-copy{margin:0;font-size:14px;line-height:19px;font-weight:500;color:v
 <section class="band" id="hr">
   <img class="bg" src="img/photo-highfive.jpg" alt="">
   <div class="wrap">
-    <span class="eyebrow rv">그루 이음 · 사업장 근로자를 위한</span>
-    <h2 class="rv">휴가 신청부터 결재까지,<br>캘린더 하나로 끝</h2>
-    <p class="sub rv">구성원의 근무와 휴가가 한 캘린더에 모입니다. 연차·병가·경조사는 정책대로 자동 차감되고, 야근과 휴일근무는 전자결재로 미리 보고합니다.</p>
+    <span class="eyebrow rv">그루 이음 · HR</span>
+    <h2 class="rv">사람과 회사의 모든 순간을,<br>단단하게 이어줍니다</h2>
+    <p class="sub rv">관리가 아니라 연결입니다. 구성원의 근무와 휴가가 한 캘린더에 모이고, 연차·병가·경조사는 정책대로 자동 차감되며, 야근과 휴일근무는 전자결재로 미리 보고합니다.</p>
     <div class="btns rv"><a class="btn btn-white" href="https://hr.porest.cloud">그루 이음 들어가기</a></div>
   </div>
 </section>
@@ -216,7 +228,16 @@ footer .ft-copy{margin:0;font-size:14px;line-height:19px;font-weight:500;color:v
 </div></section>
 
 <!-- Desk -->
-<section class="feat alt" id="desk"><div class="wrap">
+<section class="band solid" id="desk">
+  <div class="wrap">
+    <span class="eyebrow rv">그루 담다 · Desk</span>
+    <h2 class="rv">흩어진 일상의 조각을,<br>정갈하게 담아냅니다</h2>
+    <p class="sub rv">캘린더는 이 앱에, 가계부는 저 앱에. 할 일 · 일정 · 메모 · 가계부 · 자산을 하나의 단정한 보관함에 담아, 오늘 하루에 몰입하세요. 필요한 것만 쓰고, 안 쓰는 건 덜어내도 좋습니다.</p>
+    <div class="btns rv"><a class="btn btn-white" href="https://desk.porest.cloud">그루 담다 시작하기</a></div>
+  </div>
+</section>
+
+<section class="feat alt"><div class="wrap">
   <div class="copy rv"><span class="eyebrow">그루 담다 · 자산</span>
     <h2>내 돈이 어디에<br>얼마나 있는지, 한 화면에</h2>
     <p class="sub">계좌·카드·적금·투자·대출을 한 곳에 놓으면 순자산이 계산됩니다. 카드값은 결제 계좌에서 빠지고, 마이너스 통장은 부호가 알아서 정해집니다.</p>
@@ -299,12 +320,15 @@ footer .ft-copy{margin:0;font-size:14px;line-height:19px;font-weight:500;color:v
 </section>
 
 <!-- About -->
-<section class="band" id="about">
-  <img class="bg" src="img/photo-team.jpg" alt="">
+<section class="about" id="about">
   <div class="wrap">
-    <span class="eyebrow rv">Every Forest Begins with GROO</span>
-    <h2 class="rv">작은 하나가 모여,<br>나다운 숲이 됩니다</h2>
-    <p class="sub rv">그루는 나무를 세는 단위입니다. 아무리 울창한 숲도 한 그루에서 시작합니다. 한 사람의 생각이 팀의 방향을 바꾸고, 도구 하나의 쓰임이 하루를 조금 더 편하게 만든다고 믿습니다. 사람과 회사를 잇는 이음, 흩어진 일상을 담는 담다, 그리고 하나의 그루 계정이 한 숲 안에서 함께 자랍니다.</p>
+    <div class="copy">
+      <span class="eyebrow rv">Every Forest Begins with GROO</span>
+      <h2 class="rv">작은 하나가 모여,<br>나다운 숲이 됩니다</h2>
+      <p class="sub rv">그루는 나무를 세는 단위입니다. 아무리 울창한 숲도 한 그루에서 시작합니다. 한 사람의 생각이 팀의 방향을 바꾸고, 도구 하나의 쓰임이 하루를 조금 더 편하게 만든다고 믿습니다.</p>
+      <p class="sub rv">같은 모습으로 자랄 필요도, 모든 것을 한 번에 갖출 필요도 없습니다. 내게 필요한 한 그루부터, 서로 다른 우리가 함께 만드는 숲까지.</p>
+    </div>
+    <div class="mark rv"><img src="img/groo-logo.svg" alt="그루 심볼 — 기둥 위에 두 잎이 겹쳐 올라가는 한 그루 나무" width="154" height="166"></div>
   </div>
 </section>
 
@@ -339,7 +363,7 @@ footer .ft-copy{margin:0;font-size:14px;line-height:19px;font-weight:500;color:v
 
 <footer><div class="ft">
   <div class="ft-nav">
-    <div class="ft-brand"><span class="logo">GROO</span><p>일상에 한 그루, 함께 만드는 숲.</p></div>
+    <div class="ft-brand"><span class="logo"><img src="img/groo-logo.svg" alt="" width="24" height="26"><span>GROO</span></span><p>일상에 한 그루, 함께 만드는 숲.</p></div>
     <div class="ft-map" role="navigation" aria-label="사이트 지도">
       <div class="ft-col"><p class="ft-h" id="ft-svc">서비스</p><ul aria-labelledby="ft-svc"><li><a href="https://hr.porest.cloud">그루 이음</a></li><li><a href="https://desk.porest.cloud">그루 담다</a></li><li><a href="https://desk.porest.cloud/guide/">그루 담다 설명서</a></li></ul></div>
       <div class="ft-col"><p class="ft-h" id="ft-acc">계정</p><ul aria-labelledby="ft-acc"><li><a href="https://sso.porest.cloud">로그인</a></li><li><a href="https://sso.porest.cloud">회원가입</a></li></ul></div>
