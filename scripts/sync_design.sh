@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 #
-# porest-design 의 토큰을 이 레포로 가져온다 — css/tokens*.css 는 손으로 고치지 않는다.
+# groo-design 의 토큰을 이 레포로 가져온다 — css/tokens*.css 는 손으로 고치지 않는다.
 #
 #   css/tokens.css       ← DESIGN.md      (공통: 글꼴 · 글자 · 간격 · 모서리 · 중립색 · 역할색)  :root
 #   css/tokens.hr.css    ← DESIGN.hr.md   (이음 브랜드색)                                         .theme-hr
 #   css/tokens.desk.css  ← DESIGN.desk.md (담다 브랜드색)                                         .theme-desk
 #
 # 디자인 시스템이 내보내는 Tailwind v4 `@theme { }` 의 첫 블록(라이트 값)만 가져와 선택자만 바꾼다.
-# 값은 한 글자도 안 건드린다. 값을 바꾸려면 porest-design 원본을 고친다.
+# 값은 한 글자도 안 건드린다. 값을 바꾸려면 groo-design 원본을 고친다.
 #
-# porest-design 은 옆 폴더(../porest-design)라고 본다. 다르면 PORESTDESIGN_DIR 로 알려 준다.
+# groo-design 은 옆 폴더(../groo-design)라고 본다. 다르면 GROODESIGN_DIR 로 알려 준다.
 #
 # 사용: scripts/sync_design.sh
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DESIGN_DIR="${PORESTDESIGN_DIR:-../porest-design}"
+DESIGN_DIR="${GROODESIGN_DIR:-../groo-design}"
 case "${DESIGN_DIR}" in
   /*) ;;
   *) DESIGN_DIR="${ROOT}/${DESIGN_DIR}" ;;
 esac
-[ -f "${DESIGN_DIR}/DESIGN.md" ] || { echo "porest-design 을 찾지 못했다: ${DESIGN_DIR}" >&2; exit 1; }
+[ -f "${DESIGN_DIR}/DESIGN.md" ] || { echo "groo-design 을 찾지 못했다: ${DESIGN_DIR}" >&2; exit 1; }
 
 ( cd "${DESIGN_DIR}" && npm run -s export:tailwind:all )
 

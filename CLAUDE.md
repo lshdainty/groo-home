@@ -17,11 +17,11 @@
 구성과 톤은 당근 소개 사이트(about.daangn.com)를 본뜬다 — 큰 문장, 넉넉한 여백, 평평한 면. 서비스는 서비스별 페이지에서 따로 설명하고,
 메인은 그루 자체를 말한다. 서비스가 늘면 `/<이름>/` 쪽을 하나 더 만들고 메인 카드에 올린다.
 
-**디자인은 `porest-design` 을 따른다**(2026-10-20 사용자 결정 — 이전에는 일부러 따르지 않았다).
+**디자인은 `groo-design` 을 따른다**(2026-10-20 사용자 결정 — 이전에는 일부러 따르지 않았다).
 - 값은 전부 `css/tokens*.css` 의 변수(`--color-*` · `--text-*` · `--spacing-*` · `--radius-*`)를 `var()` 로 부른다. 새 색·크기를 `site.css` 에서 정하지 않는다
-- `css/tokens*.css` 는 `scripts/sync_design.sh` 가 만든다 — **손으로 고치지 않는다.** 값을 바꾸려면 porest-design 원본을 고치고 다시 가져온다
+- `css/tokens*.css` 는 `scripts/sync_design.sh` 가 만든다 — **손으로 고치지 않는다.** 값을 바꾸려면 groo-design 원본을 고치고 다시 가져온다
 - 이음 쪽은 `.theme-hr`, 담다 쪽은 `.theme-desk` 클래스로 브랜드색을 얹는다. 그루 메인은 중립색이다
-- 말투는 porest-design Voice and Tone(해요체 · 차분하게 · 느낌표 아끼기)을 따른다
+- 말투는 groo-design Voice and Tone(해요체 · 차분하게 · 느낌표 아끼기)을 따른다
 - 바닥(`<footer>`)은 `specs/components/footer.md` 짜임을 따른다(2026-10-15)
 
 페이지 문구는 그루 브랜드 기준(`groo/GROO-BRAND.md`)을 따른다 — 사명은 한글로만, 지금 있는 기능만 사실로 쓴다.
