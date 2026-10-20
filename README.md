@@ -1,4 +1,4 @@
-# porest-home
+# groo-home
 
 `porest.cloud` 루트에 나가는 그룹 홈페이지. **정적 HTML 세 쪽**(`/` 그루 · `/ieum/` 그루 이음 · `/damda/` 그루 담다)이다 — 빌드 없음, 의존성 없음(글꼴만 Pretendard CDN).
 
@@ -14,7 +14,7 @@
 
 ## 고치는 법
 
-페이지를 고쳐 PR → 머지 → 태그 → Jenkins `porest-home` 잡에서 prod 배포. 그게 전부다.
+페이지를 고쳐 PR → 머지 → 태그 → Jenkins `porest-home` 잡에서 prod 배포(잡 이름은 서버 쪽이라 아직 옛 이름이다). 그게 전부다.
 서비스 링크(`hr.` `desk.` `sso.porest.cloud`)와 설명 문구만 페이지 안에서 바꾼다.
 
 디자인 값이 바뀌면 `scripts/sync_design.sh`(옆 폴더 `../porest-design`, 다르면 `PORESTDESIGN_DIR`)로 토큰을 다시 가져온다.
@@ -26,7 +26,7 @@
 (IP 직접 접근, 모르는 호스트)이 hr 로 떨어지던 것을 여기서 받는다.
 
 ```nginx
-    # 그룹 홈페이지 — porest-home. 기본 서버: 이름이 안 맞는 요청도 여기로 온다
+    # 그룹 홈페이지 — groo-home. 기본 서버: 이름이 안 맞는 요청도 여기로 온다
     server {
         listen 443 ssl default_server;
         http2 on;

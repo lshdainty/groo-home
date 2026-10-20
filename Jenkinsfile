@@ -15,7 +15,7 @@ pipeline {
         )
     }
     environment {
-        REPO_URL = "https://github.com/lshdainty/porest-home.git"
+        REPO_URL = "https://github.com/lshdainty/groo-home.git"
         IMAGE_NAME = "porest-home"
         SRC_DIR = "${env.POREST_BASE_DIR}/src/home"
         CONTAINER_NAME = "home"

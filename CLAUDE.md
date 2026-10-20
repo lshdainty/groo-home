@@ -1,4 +1,4 @@
-# porest-home — 작업 규칙
+# groo-home — 작업 규칙
 
 > **워크스페이스 공통 규칙**(Git 작업 격리 · 스테이징 범위 · 태그·릴리스)은
 > 상위 `/home/lshdainty/study/CLAUDE.md` 에 있다. Claude Code 가 디렉토리 워크업으로
@@ -24,7 +24,7 @@
 - 말투는 porest-design Voice and Tone(해요체 · 차분하게 · 느낌표 아끼기)을 따른다
 - 바닥(`<footer>`)은 `specs/components/footer.md` 짜임을 따른다(2026-10-15)
 
-페이지 문구는 그루 브랜드 기준(`POREST/GROO-BRAND.md`)을 따른다 — 사명은 한글로만, 지금 있는 기능만 사실로 쓴다.
+페이지 문구는 그루 브랜드 기준(`groo/GROO-BRAND.md`)을 따른다 — 사명은 한글로만, 지금 있는 기능만 사실로 쓴다.
 
 ## 지킬 것
 
