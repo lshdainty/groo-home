@@ -8,13 +8,13 @@
 | `css/site.css` | 사이트 스타일. 값은 전부 토큰 변수를 부른다 |
 | `css/tokens*.css` | 디자인 시스템 토큰 — `scripts/sync_design.sh` 가 만든다. 손으로 고치지 않는다 |
 | `js/site.js` | 위 막대 선 · 나타나기 |
-| `Dockerfile` | 비루트 nginx(8080)에 페이지·css·js·img 를 담는다. `porest-desk-guide` 와 같은 모양 |
+| `Dockerfile` | 비루트 nginx(8080)에 페이지·css·js·img 를 담는다. `groo-damda-guide` 와 같은 모양 |
 | `nginx.conf` | 컨테이너 안 nginx. 디렉터리 주소(`/ieum/`)는 그 쪽, 모르는 경로는 `index.html`. 끝 슬래시 없는 주소는 상대 주소로 보낸다(`absolute_redirect off`) |
-| `Jenkinsfile` | `porest-desk-guide` 와 같은 파이프라인 — dev 는 브랜치·태그, prod 는 `vX.Y.Z` 태그만, 승인 후 배포 |
+| `Jenkinsfile` | `groo-damda-guide` 와 같은 파이프라인 — dev 는 브랜치·태그, prod 는 `vX.Y.Z` 태그만, 승인 후 배포 |
 
 ## 고치는 법
 
-페이지를 고쳐 PR → 머지 → 태그 → Jenkins `porest-home` 잡에서 prod 배포(잡 이름은 서버 쪽이라 아직 옛 이름이다). 그게 전부다.
+페이지를 고쳐 PR → 머지 → 태그 → Jenkins `groo-home` 잡에서 prod 배포(잡 이름은 서버 쪽이라 아직 옛 이름이다). 그게 전부다.
 서비스 링크(`hr.` `desk.` `sso.hangroo.io`)와 설명 문구만 페이지 안에서 바꾼다.
 
 디자인 값이 바뀌면 `scripts/sync_design.sh`(옆 폴더 `../groo-design`, 다르면 `GROODESIGN_DIR`)로 토큰을 다시 가져온다.
