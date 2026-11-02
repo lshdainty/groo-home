@@ -1,6 +1,6 @@
 # groo-home
 
-`porest.cloud` 루트에 나가는 그룹 홈페이지. **정적 HTML 세 쪽**(`/` 그루 · `/ieum/` 그루 이음 · `/damda/` 그루 담다)이다 — 빌드 없음, 의존성 없음(글꼴만 Pretendard CDN).
+`hangroo.io` 루트에 나가는 그룹 홈페이지. **정적 HTML 세 쪽**(`/` 그루 · `/ieum/` 그루 이음 · `/damda/` 그루 담다)이다 — 빌드 없음, 의존성 없음(글꼴만 Pretendard CDN).
 
 | 파일 | 역할 |
 |---|---|
@@ -15,7 +15,7 @@
 ## 고치는 법
 
 페이지를 고쳐 PR → 머지 → 태그 → Jenkins `porest-home` 잡에서 prod 배포(잡 이름은 서버 쪽이라 아직 옛 이름이다). 그게 전부다.
-서비스 링크(`hr.` `desk.` `sso.porest.cloud`)와 설명 문구만 페이지 안에서 바꾼다.
+서비스 링크(`hr.` `desk.` `sso.hangroo.io`)와 설명 문구만 페이지 안에서 바꾼다.
 
 디자인 값이 바뀌면 `scripts/sync_design.sh`(옆 폴더 `../groo-design`, 다르면 `GROODESIGN_DIR`)로 토큰을 다시 가져온다.
 로컬 미리보기는 이 폴더 루트에서 `python3 -m http.server` — 주소가 `/css/…` 처럼 루트 기준이다.
@@ -30,7 +30,7 @@
     server {
         listen 443 ssl default_server;
         http2 on;
-        server_name porest.cloud www.porest.cloud;
+        server_name hangroo.io hangroo.io;
         # ssl_certificate 줄들은 다른 블록과 같게
 
         location / {
