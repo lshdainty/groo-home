@@ -772,6 +772,8 @@
   --motion-ease-enter-expressive: cubic-bezier(0.03, 0.4, 0.1, 1);
   --motion-ease-exit-expressive: cubic-bezier(0.35, 0, 0.95, 0.55);
   --motion-ease-pressed-scale: cubic-bezier(0, 0, 0.15, 1);
+  --motion-duration-stagger: 150ms;
+  --motion-duration-pause: 500ms;
   --motion-duration-fast: 150ms;
   --motion-duration-base: 200ms;
   --motion-duration-slow: 300ms;
