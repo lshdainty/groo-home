@@ -5,26 +5,26 @@
   --default-font-family: var(--font-sans);
 
   /* Colors */
-  --color-brand-100: #edf5f0;
-  --color-brand-100-dark: #222d28;
-  --color-brand-200: #e0ede7;
-  --color-brand-200-dark: #25372e;
-  --color-brand-300: #b4ccc0;
-  --color-brand-300-dark: #264437;
-  --color-brand-400: #6ab192;
-  --color-brand-400-dark: #25523f;
-  --color-brand-500: #60927b;
-  --color-brand-500-dark: #216048;
-  --color-brand-600: #357b5f;
-  --color-brand-600-dark: #256d51;
-  --color-brand-700: #256d52;
-  --color-brand-700-dark: #357b5f;
-  --color-brand-800: #145a42;
-  --color-brand-800-dark: #599279;
-  --color-brand-900: #03452f;
-  --color-brand-900-dark: #72b898;
-  --color-brand-1000: #052b1e;
-  --color-brand-1000-dark: #ced6d2;
+  --color-brand-100: #e8f3ec;
+  --color-brand-100-dark: #202d26;
+  --color-brand-200: #d6e8de;
+  --color-brand-200-dark: #21352b;
+  --color-brand-300: #77b193;
+  --color-brand-300-dark: #214132;
+  --color-brand-400: #469570;
+  --color-brand-400-dark: #1f4e38;
+  --color-brand-500: #0d754e;
+  --color-brand-500-dark: #1b583e;
+  --color-brand-600: #075b3c;
+  --color-brand-600-dark: #0e6443;
+  --color-brand-700: #064f33;
+  --color-brand-700-dark: #0c6c49;
+  --color-brand-800: #033f28;
+  --color-brand-800-dark: #1d9567;
+  --color-brand-900: #01301e;
+  --color-brand-900-dark: #2abe84;
+  --color-brand-1000: #012214;
+  --color-brand-1000-dark: #bbdcca;
   --color-gray-00: #ffffff;
   --color-gray-00-dark: #1a1f2e;
   --color-gray-100: #f7f8fd;
@@ -355,9 +355,9 @@
   --color-fg-brand-inverted: var(--color-brand-900-dark);
   --color-fg-brand-inverted-dark: var(--color-brand-600);
   --color-bg-brand-solid: var(--color-brand-600);
-  --color-bg-brand-solid-dark: var(--color-brand-700-dark);
+  --color-bg-brand-solid-dark: var(--color-brand-500-dark);
   --color-bg-brand-solid-pressed: var(--color-brand-700);
-  --color-bg-brand-solid-pressed-dark: var(--color-brand-600-dark);
+  --color-bg-brand-solid-pressed-dark: var(--color-brand-700-dark);
   --color-bg-brand-weak: var(--color-brand-100);
   --color-bg-brand-weak-dark: var(--color-brand-200-dark);
   --color-bg-brand-weak-pressed: var(--color-brand-200);
@@ -366,7 +366,7 @@
   --color-stroke-focus-ring-dark: var(--color-brand-900-dark);
   --color-stroke-brand-solid: var(--color-brand-600);
   --color-stroke-brand-solid-dark: var(--color-brand-900-dark);
-  --color-stroke-brand-weak: var(--color-brand-400);
+  --color-stroke-brand-weak: var(--color-brand-300);
   --color-stroke-brand-weak-dark: var(--color-brand-800-dark);
   --color-fg-neutral: var(--color-gray-1000);
   --color-fg-neutral-dark: var(--color-gray-1000-dark);
@@ -740,10 +740,10 @@
   --spacing-screen-bottom: 56px;
 
   /* Shadow (from prose-token table — DESIGN*.md '## Elevation & Depth') */
-  --shadow-s1: var(--porest-shadow-s1);
-  --shadow-s2: var(--porest-shadow-s2);
-  --shadow-s3: var(--porest-shadow-s3);
-  --shadow-s4: var(--porest-shadow-s4);
+  --shadow-s1: var(--groo-shadow-s1);
+  --shadow-s2: var(--groo-shadow-s2);
+  --shadow-s3: var(--groo-shadow-s3);
+  --shadow-s4: var(--groo-shadow-s4);
   --shadow-s1-dark: 0 1px 2px 0 rgba(0, 0, 0, 0.30), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   --shadow-s2-dark: 0 2px 8px -1px rgba(0, 0, 0, 0.40), 0 1px 3px -1px rgba(0, 0, 0, 0.20), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
   --shadow-s3-dark: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 2px 6px -2px rgba(0, 0, 0, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);

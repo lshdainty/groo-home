@@ -439,6 +439,8 @@
   --color-stroke-warning-weak-dark: var(--color-orange-400-dark);
   --color-stroke-informative-weak: var(--color-blue-300);
   --color-stroke-informative-weak-dark: var(--color-blue-400-dark);
+  --color-stroke-focus-ring: var(--color-gray-1000);
+  --color-stroke-focus-ring-dark: var(--color-gray-1000-dark);
 
   /* Typography — rem (글자 크기 설정을 따름) + -static px (고정). font-size · line-height · font-weight · letter-spacing */
   --text-t1: 0.6875rem;
@@ -696,10 +698,10 @@
   --spacing-screen-bottom: 56px;
 
   /* Shadow (from prose-token table — DESIGN*.md '## Elevation & Depth') */
-  --shadow-s1: var(--porest-shadow-s1);
-  --shadow-s2: var(--porest-shadow-s2);
-  --shadow-s3: var(--porest-shadow-s3);
-  --shadow-s4: var(--porest-shadow-s4);
+  --shadow-s1: var(--groo-shadow-s1);
+  --shadow-s2: var(--groo-shadow-s2);
+  --shadow-s3: var(--groo-shadow-s3);
+  --shadow-s4: var(--groo-shadow-s4);
   --shadow-s1-dark: 0 1px 2px 0 rgba(0, 0, 0, 0.30), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   --shadow-s2-dark: 0 2px 8px -1px rgba(0, 0, 0, 0.40), 0 1px 3px -1px rgba(0, 0, 0, 0.20), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
   --shadow-s3-dark: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 2px 6px -2px rgba(0, 0, 0, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
