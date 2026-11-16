@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/css/tokens.hr.css">
 <link rel="stylesheet" href="/css/tokens.desk.css">
 <link rel="stylesheet" href="/css/site.css">
+<noscript><style>.motion.wait [class^="mo-"] { animation-play-state: running; }</style></noscript>
 </head>
 <body class="">
 <nav class="top"><div class="wrap">
@@ -47,7 +48,35 @@
         <p class="desc">사람을 숫자로 관리하는 대신, 사람과 사람, 사람과 회사의 관계와 맥락을 이어요. 구성원의 일정과 휴가를 한 캘린더에 모으고, 연차·병가·경조사 정책을 두면 발생과 차감이 자동으로 이뤄져요. 야근과 휴일근무는 전자결재로 미리 보고하고, 관리자는 초대 한 번으로 구성원을 들여 부서·권한·근무시간을 정해요.</p>
         <ul class="chips"><li>일정·캘린더</li><li>휴가 관리</li><li>전자결재</li><li>근무 일정</li><li>권한 관리</li></ul>
       </div>
-      <a class="photo rv" href="/ieum/" tabindex="-1" aria-hidden="true"><img src="/img/svc-ieum.jpg" alt="" width="1400" height="900"></a>
+      <a class="photo motion wait rv" href="/ieum/" tabindex="-1" aria-hidden="true">
+        <!-- 서비스 모션(2026-11-12) — 흩어진 사람이 선으로 이어진 뒤 팀 일정의 줄로 자리 잡는다. 끝 장면이 기본 모양이다 -->
+        <svg class="scene scene-ieum" viewBox="0 0 480 300" preserveAspectRatio="xMidYMid meet" focusable="false">
+          <rect class="mo-fade" style="--b:var(--s3)" x="20" y="16" width="440" height="268" rx="18" fill="var(--color-bg-layer-default)" stroke="var(--color-stroke-neutral-weak)"/>
+          <g class="mo-fade" style="--b:var(--s3);--i:1">
+            <text x="44" y="54" font-size="20" font-weight="700" fill="var(--color-fg-neutral)">11월 둘째 주 · 팀 일정</text>
+            <path d="M40 125H440M40 175H440M40 225H440" stroke="var(--color-stroke-neutral-weak)"/>
+          </g>
+          <g fill="none" stroke="var(--color-stroke-brand-weak)" stroke-width="4" stroke-linecap="round">
+            <g class="mo-vanish" style="--b:var(--s3)"><path class="mo-draw" style="--b:var(--s2)" pathLength="1" d="M120 90L270 60"/></g>
+            <g class="mo-vanish" style="--b:var(--s3)"><path class="mo-draw" style="--b:var(--s2);--i:1" pathLength="1" d="M270 60L380 150"/></g>
+            <g class="mo-vanish" style="--b:var(--s3)"><path class="mo-draw" style="--b:var(--s2);--i:2" pathLength="1" d="M380 150L210 220"/></g>
+            <g class="mo-vanish" style="--b:var(--s3)"><path class="mo-draw" style="--b:var(--s2);--i:3" pathLength="1" d="M210 220L120 90"/></g>
+            <g class="mo-vanish" style="--b:var(--s3)"><path class="mo-draw" style="--b:var(--s2);--i:4" pathLength="1" d="M120 90L380 150"/></g>
+          </g>
+          <g font-size="19" font-weight="700">
+            <g class="mo-grow" style="--b:var(--s4)"><rect x="100" y="83" width="220" height="34" rx="10" fill="var(--color-bg-brand-solid)"/><text x="116" y="106.5" fill="var(--color-static-white)">연차</text></g>
+            <g class="mo-grow" style="--b:var(--s4);--i:1"><rect x="230" y="133" width="90" height="34" rx="10" fill="var(--color-bg-brand-weak)"/><text x="246" y="156.5" fill="var(--color-fg-brand-contrast)">반차</text></g>
+            <g class="mo-grow" style="--b:var(--s4);--i:2"><rect x="100" y="183" width="160" height="34" rx="10" fill="var(--color-chart-violet-weak)"/><text x="116" y="206.5" fill="var(--color-chart-violet-contrast)">출장</text></g>
+            <g class="mo-grow" style="--b:var(--s4);--i:3"><rect x="330" y="233" width="100" height="34" rx="10" fill="var(--color-chart-pink-weak)"/><text x="346" y="256.5" fill="var(--color-chart-pink-contrast)">생일</text></g>
+          </g>
+          <g font-size="19" font-weight="700" fill="var(--color-static-white)" text-anchor="middle">
+            <g class="mo-gather" style="--b:var(--s3);--dx:60px;--dy:-10px"><g class="mo-pop" style="--b:var(--s1)"><circle cx="60" cy="100" r="20" fill="var(--color-bg-brand-solid)"/><text x="60" y="106.5">하</text></g></g>
+            <g class="mo-gather" style="--b:var(--s3);--i:1;--dx:210px;--dy:-90px"><g class="mo-pop" style="--b:var(--s1);--i:1"><circle cx="60" cy="150" r="20" fill="var(--color-bg-brand-solid)"/><text x="60" y="156.5">도</text></g></g>
+            <g class="mo-gather" style="--b:var(--s3);--i:2;--dx:320px;--dy:-50px"><g class="mo-pop" style="--b:var(--s1);--i:2"><circle cx="60" cy="200" r="20" fill="var(--color-bg-brand-solid)"/><text x="60" y="206.5">서</text></g></g>
+            <g class="mo-gather" style="--b:var(--s3);--i:3;--dx:150px;--dy:-30px"><g class="mo-pop" style="--b:var(--s1);--i:3"><circle cx="60" cy="250" r="20" fill="var(--color-bg-brand-solid)"/><text x="60" y="256.5">민</text></g></g>
+          </g>
+        </svg>
+      </a>
     </article>
     <article class="svc flip theme-desk">
       <div class="copy rv">
@@ -57,7 +86,26 @@
         <p class="desc">캘린더는 이 앱에, 가계부는 저 앱에 흩어진 일상을 하나의 단정한 보관함에 담아요. 쓴 돈은 적기만 하면 날짜별·카테고리별로 정리되고, 예산을 두면 오늘 얼마까지 써도 되는지 알려 줘요. 할 일과 일정, 메모, 자산까지 한곳에서 보고, 웹과 Android 앱에서 같은 화면, 같은 데이터로 이어 써요.</p>
         <ul class="chips"><li>자산</li><li>가계부</li><li>예산</li><li>캘린더</li><li>할 일</li><li>더치페이</li><li>메모</li></ul>
       </div>
-      <a class="photo rv" href="/damda/" tabindex="-1" aria-hidden="true"><img src="/img/svc-damda.jpg" alt="" width="1400" height="900"></a>
+      <a class="photo motion wait rv" href="/damda/" tabindex="-1" aria-hidden="true">
+        <!-- 서비스 모션(2026-11-12) — 흩어진 지출 조각이 하루 지출 목록으로 담긴다. 끝 장면이 기본 모양이다 -->
+        <svg class="scene scene-damda" viewBox="0 0 480 300" preserveAspectRatio="xMidYMid meet" focusable="false">
+          <rect class="mo-fade" style="--b:var(--s2)" x="110" y="12" width="260" height="276" rx="18" fill="var(--color-bg-layer-default)" stroke="var(--color-stroke-neutral-weak)"/>
+          <g class="mo-fade" style="--b:var(--s3)">
+            <text x="132" y="46" font-size="19" font-weight="500" fill="var(--color-fg-neutral-muted)">오늘 쓴 돈</text>
+            <text x="132" y="82" font-size="30" font-weight="800" fill="var(--color-fg-neutral)">47,800원</text>
+          </g>
+          <rect class="mo-grow" style="--b:var(--s3);--i:1" x="132" y="96" width="41" height="10" rx="2" fill="var(--color-chart-orange)"/>
+          <rect class="mo-grow" style="--b:var(--s3);--i:2" x="173" y="96" width="20" height="10" rx="2" fill="var(--color-chart-yellow)"/>
+          <rect class="mo-grow" style="--b:var(--s3);--i:3" x="193" y="96" width="148" height="10" rx="2" fill="var(--color-chart-green)"/>
+          <rect class="mo-grow" style="--b:var(--s3);--i:4" x="341" y="96" width="7" height="10" rx="2" fill="var(--color-chart-violet)"/>
+          <g font-size="19">
+            <g class="mo-gather" style="--b:var(--s2);--dx:-106px;--dy:-98px;--r:-8deg"><g class="mo-pop" style="--b:var(--s1)"><rect x="126" y="118" width="228" height="38" rx="19" fill="var(--color-bg-layer-default)" stroke="var(--color-stroke-neutral-weak)"/><circle cx="146" cy="137" r="6" fill="var(--color-chart-orange)"/><text x="162" y="143.5" font-weight="500" fill="var(--color-fg-neutral)">점심</text><text x="338" y="143.5" font-weight="700" fill="var(--color-fg-neutral)" text-anchor="end">9,000원</text></g></g>
+            <g class="mo-gather" style="--b:var(--s2);--i:1;--dx:110px;--dy:-150px;--r:7deg"><g class="mo-pop" style="--b:var(--s1);--i:1"><rect x="126" y="160" width="228" height="38" rx="19" fill="var(--color-bg-layer-default)" stroke="var(--color-stroke-neutral-weak)"/><circle cx="146" cy="179" r="6" fill="var(--color-chart-yellow)"/><text x="162" y="185.5" font-weight="500" fill="var(--color-fg-neutral)">커피</text><text x="338" y="185.5" font-weight="700" fill="var(--color-fg-neutral)" text-anchor="end">4,500원</text></g></g>
+            <g class="mo-gather" style="--b:var(--s2);--i:2;--dx:114px;--dy:48px;--r:-5deg"><g class="mo-pop" style="--b:var(--s1);--i:2"><rect x="126" y="202" width="228" height="38" rx="19" fill="var(--color-bg-layer-default)" stroke="var(--color-stroke-neutral-weak)"/><circle cx="146" cy="221" r="6" fill="var(--color-chart-green)"/><text x="162" y="227.5" font-weight="500" fill="var(--color-fg-neutral)">장보기</text><text x="338" y="227.5" font-weight="700" fill="var(--color-fg-neutral)" text-anchor="end">32,800원</text></g></g>
+            <g class="mo-gather" style="--b:var(--s2);--i:3;--dx:-112px;--dy:-12px;--r:8deg"><g class="mo-pop" style="--b:var(--s1);--i:3"><rect x="126" y="244" width="228" height="38" rx="19" fill="var(--color-bg-layer-default)" stroke="var(--color-stroke-neutral-weak)"/><circle cx="146" cy="263" r="6" fill="var(--color-chart-violet)"/><text x="162" y="269.5" font-weight="500" fill="var(--color-fg-neutral)">버스</text><text x="338" y="269.5" font-weight="700" fill="var(--color-fg-neutral)" text-anchor="end">1,500원</text></g></g>
+          </g>
+        </svg>
+      </a>
     </article>
     <article class="svc next">
       <div class="copy rv">
