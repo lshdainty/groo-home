@@ -32,8 +32,12 @@
   <p class="rv">그루는 나무를 세는 단위예요. 같은 모습으로 자랄 필요도, 모든 것을 한 번에 갖출 필요도 없어요. 내게 필요한 한 그루부터, 서로 다른 우리가 함께 만드는 숲까지.</p>
 </div></section>
 
-<div class="strip rv" aria-hidden="true"><div class="strip-track">
-  <img src="/img/strip-1.jpg" alt="" class="tall" width="700" height="900"><img src="/img/strip-2.jpg" alt="" width="700" height="700"><img src="/img/strip-3.jpg" alt="" class="tall" width="700" height="900"><img src="/img/strip-4.jpg" alt="" width="700" height="700"><img src="/img/strip-5.jpg" alt="" class="tall" width="700" height="900"><img src="/img/strip-6.jpg" alt="" width="700" height="700">
+<div class="loop-band"><div class="wrap">
+  <div class="hero-visual hero-loop rv">
+    <video class="auto" src="/video/groo-loop.mp4" poster="/video/groo-loop-poster.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+    <button type="button" class="play-film" data-film="/video/groo-film.mp4" data-poster="/video/groo-film-poster.jpg" data-desc="그루 소개 영상(55초, 음악). 종이 위 깜빡이는 커서가 &quot;작은 하나의 가능성을 믿어요.&quot;를 치고, 그 커서가 늘어나 나무 기둥이 돼요. 모눈 위에서 작도선이 잎을 그리고 기둥 · 잎 · 겹침에 이름표가 붙으며 그루 로고가 지어져요. &quot;그루는 나무를 세는 단위예요.&quot; 같은 로고가 박자마다 색과 무늬, 비율을 바꾸며 &quot;같은 모습으로 자랄 필요도, 모든 것을 한 번에 갖출 필요도 없어요.&quot;를 보여 줘요. 흩어진 잎 떼 중 한 장이 방향을 틀면 모두 따라 정렬되고(&quot;한 사람의 생각이 팀의 방향을 바꾸고,&quot;), 잎들이 달력 칸에 제자리를 찾아요(&quot;도구 하나의 쓰임이 하루를 조금 더 편하게 만들어요.&quot;). 달력에서 그루 이음 · 그루 담다의 실제 화면 카드와 &quot;다음 한 그루&quot; 카드가 일어서고, 선이 &quot;그루 계정 하나로 이어 써요&quot;로 모여요. 계정 알약이 점이 되어 밤의 지평선이 되고, 그 위에 둥근 나무 한 그루가 돋은 뒤 둥근 나무 · 층층 나무 · 미루나무 · 덤불처럼 생김새가 다른 나무들이 퍼져 숲이 되며 하늘이 새벽빛으로 밝아지고 해가 떠올라요(&quot;내게 필요한 한 그루부터, 서로 다른 우리가 함께 만드는 숲까지.&quot;). 마지막은 그루 로고와 &quot;일상에 한 그루, 함께 만드는 숲&quot;이에요."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>소개 영상 보기 <span class="dim">55초</span></button>
+    <button type="button" class="vpause" aria-label="영상 멈추기"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+  </div>
 </div></div>
 
 <section id="services"><div class="wrap">
@@ -119,6 +123,13 @@
     <p class="ft-copy">© <span data-year>2026</span> 그루</p>
   </div>
 </div></footer>
+<dialog class="film" aria-label="소개 영상">
+  <div class="film-box">
+    <video controls playsinline preload="none"></video>
+    <button type="button" class="film-close" aria-label="소개 영상 닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <p class="sr film-desc"></p>
+</dialog>
 <script src="/js/site.js"></script>
 </body>
 </html>

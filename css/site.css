@@ -202,15 +202,12 @@ footer .ft-copy { font-size: var(--text-t4); line-height: var(--text-t4--line-he
   .wrap { padding: 0 var(--spacing-x6); }
 }
 
-/* 그루 이야기 — 굵은 첫 문장 + 사진 띠 */
+/* 그루 이야기 — 굵은 첫 문장 + 그룹 영상 반복(2026-11-16 사진 띠 자리) */
 .statement p b { color: var(--color-fg-neutral); font-weight: 700; }
 .statement p:first-of-type { color: var(--color-fg-neutral-subtle); font-weight: 500; }
 .statement p:first-of-type b { color: var(--color-fg-neutral); }
-.strip { overflow-x: auto; scrollbar-width: none; padding: var(--spacing-x4) 0 var(--section-y); }
-.strip::-webkit-scrollbar { display: none; }
-.strip-track { display: flex; align-items: center; justify-content: center; gap: var(--spacing-x4); width: max-content; min-width: 100%; padding: 0 var(--spacing-x8); margin: 0 auto; }
-.strip img { width: 230px; height: 230px; object-fit: cover; border-radius: var(--radius-r4); flex: none; }
-.strip img.tall { height: 320px; }
+.loop-band { padding: var(--spacing-x4) 0 var(--section-y); }
+.loop-band .hero-visual { margin-top: 0; }
 
 /* 서비스 줄 — 큰 사진 + 설명 */
 .svc-list { display: grid; gap: 0; }
@@ -233,8 +230,6 @@ a.photo:hover img { transform: scale(1.03); }
 .svc.next .tile { background: var(--color-bg-neutral-weak); }
 @media (prefers-reduced-motion: reduce) { .svc .photo img { transition: none; } }
 @media (max-width: 960px) {
-  .strip-track { justify-content: flex-start; }
-  .strip img { width: 170px; height: 170px; } .strip img.tall { height: 240px; }
   .svc { grid-template-columns: 1fr; gap: var(--spacing-x8); padding: var(--spacing-x10) 0; }
   .svc.flip .copy { order: 0; }
   .svc .photo { min-height: 0; width: 100%; aspect-ratio: 16 / 10; order: -1; }
