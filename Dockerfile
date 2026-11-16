@@ -13,6 +13,7 @@ COPY damda /usr/share/nginx/html/damda
 COPY css /usr/share/nginx/html/css
 COPY js /usr/share/nginx/html/js
 COPY img /usr/share/nginx/html/img
+COPY video /usr/share/nginx/html/video
 
 EXPOSE 8080
 
