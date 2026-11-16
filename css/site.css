@@ -243,46 +243,24 @@ a.photo:hover img { transform: scale(1.03); }
 .svc > * { min-width: 0; }
 .svc .photo img { display: block; }
 
-/* 서비스 모션 — 메인 "그루가 심은 서비스" 줄의 이음 · 담다 자리(사용자 결정 2026-11-12: 동작이 화면이 되는 장면 · 화면에 들어올 때 한 번 · 사진 자리).
- * 움직임 하나는 d6 + enter-expressive(선 그리기는 enter, 사라짐은 d3 + exit)다. 순서는 --mo-stagger(형제 간격) · --mo-pause(무리 사이 쉼)로만 계산하고,
- * 장면에는 정수(무리 번호 · 순번)만 둔다. 각 요소의 기본 모양이 끝 장면이라 모션 줄이기 · 스크립트 없음에서도 끝 장면이 보인다.
- * 화면에 들어오기 전에는 .wait 로 첫 장면에 멈춰 있다 — js/site.js 가 걷는다.
- * 박자 값 두 개는 이 화면이 정한다(사용자 결정 2026-11-16 — 디자인 시스템 토큰은 제품 개발용만 두고, 광고 · 소개 모션의 박자는
- * 그 화면이 스스로 정한다. groo-design #221 이 motion-duration-stagger · pause 를 걷었다). 위 "새 값을 여기서 정하지 않는다" 의 예외다. */
-.motion { --mo-stagger: 150ms; --mo-pause: 500ms; }
-.svc .photo.motion { position: relative; background: var(--color-bg-brand-weak); }
-.motion svg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: calc(var(--page-max) / 2); margin: 0 auto; display: block; }
-.motion text { font-family: var(--font-sans); }
-.scene-ieum {
-  --s1: 0s;
-  --s2: calc(var(--s1) + 3 * var(--mo-stagger) + var(--motion-duration-d6));
-  --s3: calc(var(--s2) + 4 * var(--mo-stagger) + var(--motion-duration-d6) + var(--mo-pause));
-  --s4: calc(var(--s3) + 3 * var(--mo-stagger) + var(--motion-duration-d6));
-}
-.scene-damda {
-  --s1: 0s;
-  --s2: calc(var(--s1) + 3 * var(--mo-stagger) + var(--motion-duration-d6) + var(--mo-pause));
-  --s3: calc(var(--s2) + 3 * var(--mo-stagger) + var(--motion-duration-d6));
-}
-.motion [class^="mo-"] {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation-duration: var(--motion-duration-d6);
-  animation-timing-function: var(--motion-ease-enter-expressive);
-  animation-fill-mode: both;
-  animation-delay: calc(var(--b, 0s) + var(--i, 0) * var(--mo-stagger));
-}
-.motion .mo-pop { animation-name: mo-pop; }
-.motion .mo-fade { animation-name: mo-fade; }
-.motion .mo-grow { animation-name: mo-grow; transform-origin: left center; }
-.motion .mo-gather { animation-name: mo-gather; }
-.motion .mo-draw { animation-name: mo-draw; animation-timing-function: var(--motion-ease-enter); stroke-dasharray: 1; }
-.motion .mo-vanish { animation-name: mo-vanish; animation-duration: var(--motion-duration-d3); animation-timing-function: var(--motion-ease-exit); opacity: 0; }
-@keyframes mo-pop { from { opacity: 0; transform: scale(.6); } }
-@keyframes mo-fade { from { opacity: 0; } }
-@keyframes mo-grow { from { transform: scaleX(0); } }
-@keyframes mo-gather { from { transform: translate(var(--dx), var(--dy)) rotate(var(--r, 0deg)); } }
-@keyframes mo-draw { from { stroke-dashoffset: 1; } }
-@keyframes mo-vanish { from { opacity: 1; } to { opacity: 0; } }
-.motion.wait [class^="mo-"] { animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce) { .motion [class^="mo-"] { animation: none; } }
+/* 서비스 짧은 장면 — 메인 "그루가 심은 서비스" 줄의 이음 · 담다 칸(사용자 결정 2026-11-16: 담다 소개 영상과 같은 방식 —
+ * 실제 화면 캡처 + 입체 연출을 담은 무음 클립. 2026-11-12 의 SVG 장면을 바꾼다). 화면에 충분히 들어왔을 때 한 번 재생하고
+ * 마지막 장면에서 멈춘다(js/site.js). poster 는 끝 장면이라 모션 줄이기 · 스크립트 없음에서는 끝 장면만 보인다.
+ * 클립은 1200×900 으로 만들고 칸을 cover 로 채운다 — 중요한 것은 가운데에 모아 데스크톱(약 1.3~1.5:1) · 폰(16:10) 어디서도 안 잘린다.
+ * 클립과 첫 화면 영상의 원본 · 음악 출처는 video/SOURCES.md 에 있다. */
+.svc .photo.clip { position: relative; background: var(--color-bg-brand-weak); }
+.svc .photo.clip video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 담다 소개 첫 화면 영상(사용자 결정 2026-11-16: 소리 없이 자동 재생 + 소리 켜기). 화면에 들어오면 한 번 재생하고 끝 장면에서
+ * 멈춘다. 모션 줄이기면 자동 재생하지 않고 정지 화면과 버튼만 둔다. 5초가 넘게 움직이므로 멈춤 버튼을 늘 둔다(WCAG 2.2.2). */
+.hero-video { border: 1px solid var(--color-stroke-neutral-weak); border-radius: var(--radius-r4); overflow: hidden; aspect-ratio: 16 / 9; background: var(--color-bg-neutral-weak); }
+.hero-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.vctl { position: absolute; right: var(--spacing-x4); bottom: var(--spacing-x4); display: flex; gap: var(--spacing-x2); }
+.vbtn { width: 44px; height: 44px; border: 0; border-radius: var(--radius-full); display: grid; place-items: center; cursor: pointer; padding: 0;
+  background: color-mix(in srgb, var(--color-bg-neutral-inverted) 70%, transparent); color: var(--color-fg-neutral-inverted); }
+.vbtn svg { width: 20px; height: 20px; display: block; }
+.vbtn .i-on, .vbtn[aria-pressed="true"] .i-off { display: none; }
+.vbtn[aria-pressed="true"] .i-on { display: block; }
+.vbtn .i-pause, .vbtn .i-replay { display: none; }
+.vbtn[data-state="playing"] .i-play, .vbtn[data-state="replay"] .i-play { display: none; }
+.vbtn[data-state="playing"] .i-pause, .vbtn[data-state="replay"] .i-replay { display: block; }
