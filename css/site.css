@@ -264,3 +264,5 @@ a.photo:hover img { transform: scale(1.03); }
 .vbtn .i-pause, .vbtn .i-replay { display: none; }
 .vbtn[data-state="playing"] .i-play, .vbtn[data-state="replay"] .i-play { display: none; }
 .vbtn[data-state="playing"] .i-pause, .vbtn[data-state="replay"] .i-replay { display: block; }
+/* 폰에서는 영상 칸이 작아(약 340×190) 버튼이 화면을 가리지 않게 줄인다 — 36px 도 누름 최소 크기(24px, WCAG 2.5.8)보다 크다 */
+@media (max-width: 960px) { .vctl { right: var(--spacing-x2); bottom: var(--spacing-x2); gap: var(--spacing-x1_5); } .vbtn { width: 36px; height: 36px; } .vbtn svg { width: 16px; height: 16px; } }
