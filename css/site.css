@@ -243,26 +243,38 @@ a.photo:hover img { transform: scale(1.03); }
 .svc > * { min-width: 0; }
 .svc .photo img { display: block; }
 
-/* 서비스 짧은 장면 — 메인 "그루가 심은 서비스" 줄의 이음 · 담다 칸(사용자 결정 2026-11-16: 담다 소개 영상과 같은 방식 —
- * 실제 화면 캡처 + 입체 연출을 담은 무음 클립. 2026-11-12 의 SVG 장면을 바꾼다). 화면에 충분히 들어왔을 때 한 번 재생하고
- * 마지막 장면에서 멈춘다(js/site.js). poster 는 끝 장면이라 모션 줄이기 · 스크립트 없음에서는 끝 장면만 보인다.
- * 클립은 1200×900 으로 만들고 칸을 cover 로 채운다 — 중요한 것은 가운데에 모아 데스크톱(약 1.3~1.5:1) · 폰(16:10) 어디서도 안 잘린다.
- * 클립과 첫 화면 영상의 원본 · 음악 출처는 video/SOURCES.md 에 있다. */
+/* 영상(사용자 결정 2026-11-16 — 레퍼런스: 토스 · 카카오뱅크 · 시프티 · 리플링 홈페이지).
+ * - 소개 페이지 첫 화면: 소개 영상에서 뽑은 글자 없는 무음 반복 + "소개 영상 보기" 버튼(소리 있는 본편은 버튼으로만 연다)
+ * - 기능 섹션 · 모바일: dev 실제 화면을 조작한 6~8초 무음 반복(토스 방식)
+ * - 메인 서비스 줄: 서비스마다 형식이 다른 짧은 장면(담다 = 사물이 폰에 담김, 이음 = 대화가 화면 속 일로 이어짐)을 반복
+ * 공통: 화면에 절반 이상 보일 때만 재생하고 벗어나면 멈춘다(js/site.js). 5초 넘게 움직이므로 영상마다 멈춤 버튼(WCAG 2.2.2).
+ * 모션 줄이기 · 스크립트 없음이면 재생하지 않고 정지 화면(poster)만. 원본 · 음악 출처는 video/SOURCES.md */
 .svc .photo.clip { position: relative; background: var(--color-bg-brand-weak); }
 .svc .photo.clip video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* 담다 소개 첫 화면 영상(사용자 결정 2026-11-16: 소리 없이 자동 재생 + 소리 켜기). 화면에 들어오면 한 번 재생하고 끝 장면에서
- * 멈춘다. 모션 줄이기면 자동 재생하지 않고 정지 화면과 버튼만 둔다. 5초가 넘게 움직이므로 멈춤 버튼을 늘 둔다(WCAG 2.2.2). */
-.hero-video { border: 1px solid var(--color-stroke-neutral-weak); border-radius: var(--radius-r4); overflow: hidden; aspect-ratio: 16 / 9; background: var(--color-bg-neutral-weak); }
-.hero-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.vctl { position: absolute; right: var(--spacing-x4); bottom: var(--spacing-x4); display: flex; gap: var(--spacing-x2); }
-.vbtn { width: 44px; height: 44px; border: 0; border-radius: var(--radius-full); display: grid; place-items: center; cursor: pointer; padding: 0;
-  background: color-mix(in srgb, var(--color-bg-neutral-inverted) 70%, transparent); color: var(--color-fg-neutral-inverted); }
-.vbtn svg { width: 20px; height: 20px; display: block; }
-.vbtn .i-on, .vbtn[aria-pressed="true"] .i-off { display: none; }
-.vbtn[aria-pressed="true"] .i-on { display: block; }
-.vbtn .i-pause, .vbtn .i-replay { display: none; }
-.vbtn[data-state="playing"] .i-play, .vbtn[data-state="replay"] .i-play { display: none; }
-.vbtn[data-state="playing"] .i-pause, .vbtn[data-state="replay"] .i-replay { display: block; }
-/* 폰에서는 영상 칸이 작아(약 340×190) 버튼이 화면을 가리지 않게 줄인다 — 36px 도 누름 최소 크기(24px, WCAG 2.5.8)보다 크다 */
-@media (max-width: 960px) { .vctl { right: var(--spacing-x2); bottom: var(--spacing-x2); gap: var(--spacing-x1_5); } .vbtn { width: 36px; height: 36px; } .vbtn svg { width: 16px; height: 16px; } }
+.svc .photo.clip .cover { position: absolute; inset: 0; }
+.frame video, .phone video { display: block; width: 100%; height: auto; }
+.frame, .phone { position: relative; }
+.hero-loop { border: 1px solid var(--color-stroke-neutral-weak); border-radius: var(--radius-r4); overflow: hidden; aspect-ratio: 16 / 9; background: var(--color-bg-neutral-weak); }
+.hero-loop video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.play-film { position: absolute; left: var(--spacing-x5); bottom: var(--spacing-x5); display: inline-flex; align-items: center; gap: var(--spacing-x2);
+  min-height: 48px; padding: 0 var(--spacing-x5) 0 var(--spacing-x4); border: 0; border-radius: var(--radius-full); cursor: pointer;
+  font: inherit; font-size: var(--home-label-md); font-weight: 700; background: var(--color-bg-neutral-inverted); color: var(--color-fg-neutral-inverted); }
+.play-film svg { width: 20px; height: 20px; flex: none; }
+.play-film .dim { font-weight: 500; opacity: .7; }
+.play-film:hover { opacity: .9; }
+.vpause { position: absolute; right: var(--spacing-x3); bottom: var(--spacing-x3); width: 32px; height: 32px; border: 0; border-radius: var(--radius-full); padding: 0;
+  display: grid; place-items: center; cursor: pointer; z-index: 1;
+  background: color-mix(in srgb, var(--color-bg-neutral-inverted) 55%, transparent); color: var(--color-fg-neutral-inverted); opacity: .75; }
+.vpause:hover, .vpause:focus-visible { opacity: 1; }
+.vpause svg { width: 14px; height: 14px; }
+.phone .vpause { width: 24px; height: 24px; right: 6px; bottom: 6px; } .phone .vpause svg { width: 11px; height: 11px; }
+.vpause .i-play, .vpause[data-paused] .i-pause { display: none; }
+.vpause[data-paused] .i-play { display: block; }
+dialog.film { width: min(1100px, calc(100vw - 2 * var(--spacing-x4))); max-width: none; max-height: none; padding: 0; border: 0; background: transparent; overflow: visible; }
+dialog.film::backdrop { background: color-mix(in srgb, var(--color-bg-neutral-inverted) 85%, transparent); }
+.film-box { position: relative; border-radius: var(--radius-r4); overflow: hidden; background: var(--color-bg-neutral-inverted); }
+.film-box video { display: block; width: 100%; aspect-ratio: 16 / 9; }
+.film-close { position: absolute; top: var(--spacing-x3); right: var(--spacing-x3); width: 40px; height: 40px; border: 0; border-radius: var(--radius-full); padding: 0;
+  display: grid; place-items: center; cursor: pointer; background: color-mix(in srgb, var(--color-bg-neutral-inverted) 60%, transparent); color: var(--color-fg-neutral-inverted); }
+.film-close svg { width: 20px; height: 20px; }
+@media (max-width: 960px) { .play-film { left: var(--spacing-x3); bottom: var(--spacing-x3); min-height: 40px; padding: 0 var(--spacing-x4) 0 var(--spacing-x3); } .vpause { right: var(--spacing-x2); bottom: var(--spacing-x2); } }

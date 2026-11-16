@@ -5,6 +5,9 @@
 | `damda-promo.mp4` · `damda-promo-poster.jpg` | `/damda/` 첫 화면 | 그루 담다 소개 영상(1920×1080 · 30fps · 34.9초 · 음악). 2026-11-16 사용자 확정본을 웹용으로 다시 압축(crf 25) |
 | `clip-damda.mp4` · `clip-damda-start.jpg` · `clip-damda-end.jpg` | `/` 서비스 줄 담다 칸 | 담다 짧은 장면(1200×900 · 5.6초 · 무음) |
 | `clip-ieum.mp4` · `clip-ieum-start.jpg` · `clip-ieum-end.jpg` | `/` 서비스 줄 이음 칸 | 이음 짧은 장면(1200×900 · 5.8초 · 무음) |
+| `hero-damda-loop.mp4` · `hero-damda-loop-poster.jpg` | `/damda/` 첫 화면 | 소개 영상 4~8마디(책상 → 폰)를 글자 없이 다시 렌더한 8.8초 반복. 본편은 "소개 영상 보기" 버튼으로 연다 |
+| `d-*.mp4` · `d-*.jpg` | `/damda/` 기능 섹션 | dev 실제 화면(1440×900)을 스크립트로 조작한 6~8초 반복(자산 · 가계부 · 예산 · 통계 · 캘린더 · 할 일 · 더치페이 · 메모). 커서는 그려 넣은 것, 데이터를 바꾸는 동작은 없다 |
+| `m-*.mp4` · `m-*.jpg` | `/damda/` 모바일 · 가계부 | dev 모바일 웹(393×852) 7초 반복(홈 · 가계부 · 캘린더) |
 
 ## 음악
 - Mixkit **"It's Love"** — Michael Ramir C. (https://mixkit.co/free-stock-music/, id 834)
@@ -22,5 +25,6 @@
 원본(장면 HTML · 캡처 · 렌더 스크립트)은 이 레포 밖 `~/qa/damda-promo/` 에 있다(만든 컴퓨터의 작업 폴더).
 - 장면: `index.html`(소개 영상) · `clip-damda.html` · `clip-ieum.html`, 공용 `parts.css` · `parts.js`
 - 캡처: `tools/capture.mjs`(로그인해 둔 캡처용 크롬, 원격 디버깅 9333)
+- 기능 화면: `tools/record.mjs <장면.json>`(캡처용 크롬에서 커서 · 클릭 · 스크롤을 실제로 하고 프레임을 찍는다. 장면 파일은 `rec/`)
 - 렌더: `tools/render.mjs` — 헤드리스 크롬으로 프레임을 찍어 ffmpeg 로 묶는다. 클립은 `PAGE=clip-damda.html W=1200 H=900 AUDIO=0 NAME=clip-damda`
 - 웹용 압축: `ffmpeg -i <원본> -c:v libx264 -preset slow -crf 25(소개) · 26(클립) -profile:v high -pix_fmt yuv420p -movflags +faststart`
