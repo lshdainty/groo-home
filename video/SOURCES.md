@@ -32,5 +32,6 @@
 - 이음 장면은 녹화본(`rec/p-*.json` → `out/rec/p-*-raw.mp4`)을 `shots/ieum/<장면>/` 에 30fps JPEG 로 뽑아 두고, 장면 HTML 이 시각마다 해당 장을 끼운다(헤드리스 크롬에서 video 탐색보다 확실하다)
 - 캡처: `tools/capture.mjs`(로그인해 둔 캡처용 크롬, 원격 디버깅 9333)
 - 기능 화면: `tools/record.mjs <장면.json>`(캡처용 크롬에서 커서 · 클릭 · 스크롤을 실제로 하고 프레임을 찍는다. 장면 파일은 `rec/`)
+  - 페이지 애니메이션(창 · 목록 열림, 버튼 눌림)은 시계를 멈춰 두고 영상 한 장마다 1/30초씩 넘겨 담는다 — 클릭 뒤 화면을 기다리는 사이 애니메이션이 끝나 버려 화면이 "딱" 바뀌지 않게(2026-11-16)
 - 렌더: `tools/render.mjs` — 헤드리스 크롬으로 프레임을 찍어 ffmpeg 로 묶는다. 클립은 `PAGE=clip-damda.html W=1200 H=900 AUDIO=0 NAME=clip-damda`, 이음 소개 영상은 `PAGE=ieum-promo.html MUSIC=bgm-ieum.m4a NAME=ieum-promo`
 - 웹용 압축: `ffmpeg -i <원본> -c:v libx264 -preset slow -crf 25(소개) · 26(클립) -profile:v high -pix_fmt yuv420p -movflags +faststart`
